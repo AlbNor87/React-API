@@ -6,7 +6,7 @@ const Movie = (props) => (
 
 <div className="resultContainer">
 
-<img className="moviePoster" src={imageBaseUrl+props.movie.poster_path} alt="poster"/>
+    <img className="moviePoster" src={imageBaseUrl+props.movie.poster_path} alt="poster"/>
 
     <div className="content">
 

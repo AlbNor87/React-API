@@ -22,11 +22,13 @@ class TMDB extends Component {
         if (this.state.movieTitle ==='')
             return;
 
+        //Check if title and year is unchanged    
         if (prevState.movieTitle === this.state.movieTitle && prevState.movieYear === this.state.movieYear )
         {
             return false;
         }
 
+        //Check if title or year has changed
         if (prevState.movieTitle !== this.state.movieTitle || prevState.movieYear !== this.state.movieYear) {
             
             fetch(urlMovieTitle(this.state.movieTitle, this.state.movieYear))
@@ -38,7 +40,6 @@ class TMDB extends Component {
             })
             .then(data => data.json())
             .then(data => {
-                console.log(data)
                 if(data.results.length === 0) {
                     this.setState({
                          tmdbData: {results:[]}
@@ -72,10 +73,8 @@ class TMDB extends Component {
 
     render() {
 
-        console.log("hej");
-        console.log(this.state.tmdbData);
         if(this.state.requestFailed) return  <h1>Failed</h1>  
-        if(!this.state.tmdbData) return  <h1>Go on, search for something!</h1>  
+        if(!this.state.tmdbData) return  <h1>Go on, search for something!</h1>
         
         const movies = this.state.tmdbData.results.map( movie => {
 
@@ -101,7 +100,7 @@ class TMDB extends Component {
 
                 <div className="tmdbContainer">
 
-                <h1>No reults</h1>
+                <h1>No results were found... Sorry!</h1>
         
                 </div>
              )
