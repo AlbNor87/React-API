@@ -1,5 +1,5 @@
 # React-API
-## Assignment in React#
+## Assignment in React
 ### Yrgo, Gothenburg 2018
 
 <img src="https://media.giphy.com/media/VxbP9tLeKzazm/giphy.gif" alt="fetch" width="100%">
