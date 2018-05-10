@@ -56,7 +56,7 @@ class SearchForm extends Component {
             onChange={this.handleChangeYear}
             value={this.state.movieYear}
             placeholder="Type in a year... (only numbers)">
-
+            <option value="" selected>All</option>
             {options}
   
             </select>
